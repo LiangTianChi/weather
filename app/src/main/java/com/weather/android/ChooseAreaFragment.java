@@ -85,13 +85,13 @@ public class ChooseAreaFragment extends Fragment{
                         startActivity(intent);
                         getActivity().finish();
                     }
-                    /*else if (getActivity() instanceof WeatherActivity) {
+                    else if (getActivity() instanceof WeatherActivity) {
                         WeatherActivity activity = (WeatherActivity) getActivity();
                         activity.drawerLayout.closeDrawers();
                         activity.swipeRefresh.setRefreshing(true);
                         activity.requestWeather(weatherId);
                     }
-                }*/
+                }
             }
         });
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +99,8 @@ public class ChooseAreaFragment extends Fragment{
             public void onClick(View v) {
                 if (currentLevel == LEVEL_COUNTY) {
                     queryCities();
-                } else if (currentLevel == LEVEL_CITY) {
+                }
+                else if (currentLevel == LEVEL_CITY) {
                     queryProvinces();
                 }
             }
@@ -177,9 +178,11 @@ public class ChooseAreaFragment extends Fragment{
                 boolean result = false;
                 if ("province".equals(type)) {
                     result = Utility.handleProvinceResponse(responseText);
-                } else if ("city".equals(type)) {
+                }
+                else if ("city".equals(type)) {
                     result = Utility.handleCityResponse(responseText, selectedProvince.getId());
-                } else if ("county".equals(type)) {
+                }
+                else if ("county".equals(type)) {
                     result = Utility.handleCountyResponse(responseText, selectedCity.getId());
                 }
                 if (result) {
@@ -189,9 +192,11 @@ public class ChooseAreaFragment extends Fragment{
                             closeProgressDialog();
                             if ("province".equals(type)) {
                                 queryProvinces();
-                            } else if ("city".equals(type)) {
+                            }
+                            else if ("city".equals(type)) {
                                 queryCities();
-                            } else if ("county".equals(type)) {
+                            }
+                            else if ("county".equals(type)) {
                                 queryCounties();
                             }
                         }
