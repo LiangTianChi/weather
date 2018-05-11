@@ -2,9 +2,7 @@ package com.weather.android.db;
 
 import org.litepal.crud.DataSupport;
 
-/**
- * Created by TianChi on 2018/5/11.
- */
+
 
 public class Province extends DataSupport{
 
