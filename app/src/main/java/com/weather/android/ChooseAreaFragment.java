@@ -173,7 +173,7 @@ public class ChooseAreaFragment extends Fragment{
         showProgressDialog();
         HttpUtil.sendOkHttpRequest(address, new Callback(){
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(okhttp3.Call call, Response response) throws IOException {
                 String responseText = response.body().string();
                 boolean result = false;
                 if ("province".equals(type)) {
@@ -203,9 +203,8 @@ public class ChooseAreaFragment extends Fragment{
                     });
                 }
             }
-
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(okhttp3.Call call, IOException e) {
                 // 通过runOnUiThread()回到主线程处理逻辑
                 getActivity().runOnUiThread(new Runnable() {
                     @Override

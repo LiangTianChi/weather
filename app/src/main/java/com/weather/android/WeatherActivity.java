@@ -113,8 +113,9 @@ public class WeatherActivity extends AppCompatActivity {
     public void requestWeather(final String weatherId) {
         String weatherUrl = "http://guolin.tech/api/weather?cityid=" + weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9";
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
+
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(okhttp3.Call call, Response response) throws IOException {
                 final String responseText = response.body().string();
                 final Weather weather = Utility.handleWeatherResponse(responseText);
                 runOnUiThread(new Runnable() {
@@ -134,9 +135,8 @@ public class WeatherActivity extends AppCompatActivity {
                     }
                 });
             }
-
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(okhttp3.Call call, IOException e) {
                 e.printStackTrace();
                 runOnUiThread(new Runnable() {
                     @Override
@@ -146,6 +146,7 @@ public class WeatherActivity extends AppCompatActivity {
                     }
                 });
             }
+
         });
         /*loadBingPic();*/
     }
