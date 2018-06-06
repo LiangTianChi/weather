@@ -3,7 +3,7 @@ package com.weather.android.db;
 import org.litepal.crud.DataSupport;
 
 
-
+//建立省表，用于存放省级的数据信息，对应到实体类中建立Province类
 public class Province extends DataSupport{
 
     private int id;

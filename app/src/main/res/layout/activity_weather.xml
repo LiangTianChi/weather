@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@drawable/b0">
 
     <ImageView
         android:id="@+id/bing_pic_img"
@@ -37,11 +37,12 @@
 
                     <include layout="@layout/now" />
 
-                    <include layout="@layout/forecast" />
-
                     <include layout="@layout/aqi" />
 
                     <include layout="@layout/suggestion" />
+
+                    <include layout="@layout/forecast" />
+
 
                 </LinearLayout>
 

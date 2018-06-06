@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 
-
+//gson包用于存放GSON模型相关的代码
 public class Weather {
 
     public String status;

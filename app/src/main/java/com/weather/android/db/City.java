@@ -2,8 +2,8 @@ package com.weather.android.db;
 
 import org.litepal.crud.DataSupport;
 
-
-
+//bd包存放数据库模型相关的代码
+//建立市表，用于存放市级的数据信息，对应到实体类中建立County类
 public class City extends DataSupport{
 
     private int id;

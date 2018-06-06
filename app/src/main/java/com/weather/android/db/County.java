@@ -3,7 +3,7 @@ package com.weather.android.db;
 import org.litepal.crud.DataSupport;
 
 
-
+//建立县表，用于存放县级的数据信息，对应到实体类中建立County类
 public class County extends DataSupport{
 
     private int id;

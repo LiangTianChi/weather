@@ -10,6 +10,13 @@ import com.weather.android.db.*;
 import com.weather.android.gson.Weather;
 import com.google.gson.Gson;
 
+
+/*
+提供了3个方法分别用于解析和处理服务器返回的省级、市级、县级数据。
+处理方式都是类似的，先使用JSONArray和JSONObject将数据解析出来，然后组装成实体类对象，再调用save()方法将数据储存到数据库当中。
+这里由于JSON数据结构比较简单，就不使用GSON来解析了
+*/
+
 public class Utility {
 
     /* 解析和处理服务器返回的省级数据 */
@@ -89,6 +96,5 @@ public class Utility {
         }
         return null;
     }
-
 
 }

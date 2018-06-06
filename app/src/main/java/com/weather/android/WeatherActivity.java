@@ -1,5 +1,6 @@
 package com.weather.android;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -22,10 +23,12 @@ import android.widget.Toast;
 
 import com.weather.android.gson.Forecast;
 import com.weather.android.gson.Weather;
+import com.weather.android.service.AutoUpdateService;
 import com.weather.android.util.HttpUtil;
 import com.weather.android.util.Utility;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
 
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -111,7 +114,9 @@ public class WeatherActivity extends AppCompatActivity {
 
     /* 根据天气id请求城市天气信息 */
     public void requestWeather(final String weatherId) {
-        String weatherUrl = "http://guolin.tech/api/weather?cityid=" + weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9";
+        String weatherUrl = "https://guolin.tech/api/weather?cityid=" + weatherId + "&key=a89e967c5a8e48ef922a042afacf550e";
+        /*HttpURLConnection conn = (HttpURLConnection) weatherUrl.openConnection();
+        conn.setConnectTimeout(8000);*/
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
 
             @Override
@@ -210,8 +215,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
-        /*Intent intent = new Intent(this, AutoUpdateService.class);
-        startService(intent);*/
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
 }
